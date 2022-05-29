@@ -3,8 +3,11 @@
 ## COMPATIBILITY
 Life is compatible with Linux.
 
-## BUILDING
-To build, clone this repository and type:
+## INSTALL
+Simply download the latest release. No further setup required. 
+
+## BUILD
+To build from source, clone this repository and type:
 ```make life```
 
 Or if you don't have Make installed:

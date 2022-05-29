@@ -11,7 +11,7 @@ To build from source, clone this repository and type:
 ```make life```
 
 Or if you don't have Make installed:
-```gcc -o bin/life src/*.c```
+```gcc -o bin/life src/main.c src/life.c```
 
 ## DESCRIPTION
 *From https://en.wikipedia.org/wiki/Conway's_Game_of_Life:*

@@ -210,7 +210,7 @@ void help(void)
 			"\tlife [OPTIONS]\n\n"
 
 			"\tNote: simulates endlessly by default. Press Ctrl+C to stop simulating or\n"
-			"\tuse the -g option to specify a maxiumum number of generations.\n\n"
+			"\tuse the -g option to specify a maximum number of generations.\n\n"
 
 		"OPTIONS\n"
 			"-d [ms]:\tSpecify the delay between updates in miliseconds. Default value is 10ms.\n"

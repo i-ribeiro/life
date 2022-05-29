@@ -26,7 +26,7 @@ This program is a finite Game of Life simulator that will display the simulation
 ## USAGE
 life [OPTIONS]
 
-Note: simulates endlessly by default. Press Ctrl+C to stop simulating or use the -g option to specify a maxiumum number of generations.
+Note: simulates endlessly by default. Press Ctrl+C to stop simulating or use the -g option to specify a maximum number of generations.
 
 ## OPTIONS
 -d [ms]:	Specify the delay between updates in miliseconds. Default value is 10ms.

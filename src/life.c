@@ -64,10 +64,17 @@ void initialize(int sx, int sy)
 	g_sim_sy = sy;
 
 	// allocate cells
-	int size = g_sim_sx * g_sim_sy;
-	g_cells = (cell *) malloc(size);
-	g_cells_buffer = (cell *) malloc(size);
+	const int size = g_sim_sx * g_sim_sy * sizeof(cell);
 
+	if (g_cells == NULL)
+		g_cells = (cell *) malloc(size);
+	else
+		g_cells = realloc(g_cells, size);
+
+	if (g_cells_buffer == NULL)
+		g_cells_buffer = (cell *) malloc(size);
+	else
+		g_cells_buffer = realloc(g_cells_buffer, size);
 
 	randomize();
 }

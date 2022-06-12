@@ -1,10 +1,13 @@
-#include "life.h"
+/**** Includes ****/
 
+#include "life.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <assert.h>
 
+
+/**** Statics ****/
 
 /*
  * Whether or not to continue simulating.
@@ -31,6 +34,8 @@ static cell * g_cells = NULL;
  */
 static cell * g_cells_buffer = NULL;
 
+
+/**** Function Definitions ****/
 
 int simulate(int maxgen, unsigned delay)
 {
@@ -134,12 +139,8 @@ void update(void)
 {
 	// evaluate each cell and set new value
 	for (int y = 0; y < g_sim_sy; ++y)
-	{
 		for (int x = 0; x < g_sim_sx; ++x)
-		{
 			setcell(x, y, evaluate(x, y));
-		}
-	}
 
 	// apply updates 
 	apply();
@@ -169,7 +170,7 @@ int xytoi(short x, short y)
 	if (x < 0) x = x + g_sim_sx;	// lower bound
 	if (y < 0) y = y + g_sim_sy;	
 
-	// flatten coordinates to index
+	// flatten coordinates 
 	return x + (y * g_sim_sx);
 }
 
@@ -203,13 +204,8 @@ void randomize(void)
 {
 	// set each cell to a random value (0..1)
 	for (unsigned short y = 0; y < g_sim_sy; ++y)
-	{
 		for (unsigned short x = 0; x < g_sim_sx; ++x)
-		{
-			unsigned short val = rand() % 2;
-			setcell(x, y, val);
-		}
-	}
+			setcell(x, y, (cell) rand() % 2);
 
 	// apply updates
 	apply();

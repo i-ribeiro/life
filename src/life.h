@@ -1,5 +1,6 @@
 #pragma once
 
+/**** Defines ****/
 #define LIVE 1
 #define DEAD 0
 
@@ -10,10 +11,16 @@
 #define ENDLESS -1
 #define SEED_RAND 0
 
+
+/**** Typedefs ****/
+
 /*
  * Type to represent a cell.
  */
 typedef unsigned char cell;
+
+
+/**** Function Declarations ****/
 
 /*
  * Start simulation. 
@@ -97,6 +104,6 @@ void setcell(short x, short y, cell value);
 void apply(void);
 
 /*
- * Randomize the board. 
+ * Randomize cells. 
  */
 void randomize(void);

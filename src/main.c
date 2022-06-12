@@ -1,3 +1,4 @@
+/**** Includes ****/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -7,7 +8,13 @@
 #include <unistd.h>
 #include "life.h"
 
+
+/**** Defines ****/
+
 #define OPTSTR "hx:y:g:d:s:"
+
+
+/**** Function Declarations ****/
 
 /*
  * Handle system signals.
@@ -24,6 +31,8 @@ void help(void);
  */
 void getwinsize(unsigned short int *x, unsigned short int *y);
 
+
+/**** Main ****/
 
 int main(int argc, char *argv[])
 {
@@ -44,7 +53,7 @@ int main(int argc, char *argv[])
 
 	unsigned short sx = GRID_SZ_FULL;	// simulation size x 		(default: fullscreen)
 	unsigned short sy = GRID_SZ_FULL;	// simulation size y 		(default: fullscreen)
-	int maxg = ENDLESS;				// maximum generations 		(default: unlimited)
+	int maxg = ENDLESS;					// maximum generations 		(default: unlimited)
 	unsigned delay = 10;				// update delay 			(default: 10ms)
 	unsigned seed = SEED_RAND;			// simulation seed 			(default: random)
 	
@@ -181,6 +190,8 @@ int main(int argc, char *argv[])
 	return EXIT_SUCCESS;
 }
 
+
+/**** Function definitions ****/
 
 void sighandler(int signum)
 {

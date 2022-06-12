@@ -17,32 +17,6 @@
 typedef uint8_t cell;
 
 /*
- * Whether or not to continue simulating.
- */
-uint8_t g_simulate;
-
-/*
- * Grid size along the X axis.
- */
-unsigned short g_sim_sx;
-
-/*
- * Grid size along the Y axis.
- */
-unsigned short g_sim_sy;
-
-/*
- * Cell values.
- */
-cell * g_cells;
-
-/*
- * Cell values buffer to hold updated values.
- */
-cell * g_cells_buffer;
-
-
-/*
  * Start simulation. 
  * maxit: The maximum number of generations before simulation stops. Set to ENDLESS for unlimited generations.
  * delay: the delay between updates in miliseconds.

@@ -4,6 +4,33 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+
+/*
+ * Whether or not to continue simulating.
+ */
+static uint8_t g_simulate = 0;
+
+/*
+ * Grid size along the X axis.
+ */
+static unsigned short g_sim_sx = 50;
+
+/*
+ * Grid size along the Y axis.
+ */
+static unsigned short g_sim_sy = 50;
+
+/*
+ * Cell values.
+ */
+static cell * g_cells = NULL;
+
+/*
+ * Cell values buffer to hold updated values.
+ */
+static cell * g_cells_buffer = NULL;
+
+
 int simulate(int maxgen, unsigned delay)
 {
 	g_simulate = 1;
@@ -40,6 +67,7 @@ void initialize(int sx, int sy)
 	int size = g_sim_sx * g_sim_sy;
 	g_cells = (cell *) malloc(size);
 	g_cells_buffer = (cell *) malloc(size);
+
 
 	randomize();
 }

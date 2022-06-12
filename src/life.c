@@ -8,7 +8,7 @@
 /*
  * Whether or not to continue simulating.
  */
-static uint8_t g_simulate = 0;
+static unsigned char g_simulate = 0;
 
 /*
  * Grid size along the X axis.

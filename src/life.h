@@ -1,5 +1,4 @@
 #pragma once
-#include <stdint.h>
 
 #define LIVE 1
 #define DEAD 0
@@ -14,7 +13,7 @@
 /*
  * Type to represent a cell.
  */
-typedef uint8_t cell;
+typedef unsigned char cell;
 
 /*
  * Start simulation. 

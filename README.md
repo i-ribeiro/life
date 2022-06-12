@@ -8,9 +8,9 @@ Simply download the latest release. No further setup required.
 
 ## BUILD
 To build from source, clone this repository and type:
-```make life```
+```./build.sh```
 
-Or if you don't have Make installed:
+Or simply:
 ```gcc -o bin/life src/main.c src/life.c```
 
 ## DESCRIPTION

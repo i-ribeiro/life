@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <assert.h>
 
 
 /*
@@ -174,17 +175,25 @@ int xytoi(short x, short y)
 
 cell getcell(short x, short y)
 {
+	assert(g_cells);			// ensure g_cells is allocated
+
 	return g_cells[xytoi(x, y)];
 }
 
 void setcell(short x, short y, cell value)
 {
+	assert(g_cells_buffer);		// ensure g_cells_buffer is allocated
+
 	// set value in buffer cells array. call update() to propagate to the master cells array
 	g_cells_buffer[xytoi(x, y)] = value;
 }
 
 void apply(void)
 {
+	// ensure cells are allocated
+	assert(g_cells);
+	assert(g_cells_buffer);
+
 	// propagate each value in the buffer cells array to the master grid
 	for (int i = 0; i < g_sim_sx * g_sim_sy; ++i)
 		g_cells[i] = g_cells_buffer[i];

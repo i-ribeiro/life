@@ -171,6 +171,13 @@ int main(int argc, char *argv[])
 	if (sx == GRID_SZ_FULL) sx = (wx / 2) - (1 - wx % 2);
 	if (sy == GRID_SZ_FULL) sy = wy - 1;
 
+	// abort and warn if window size is not valid
+	if (wx == 0 || wy == 0)
+	{
+		puts("Fullscreen mode does not work when output is redirected to a file. Use -x / -y options to specify simulation size.");
+		exit(1);
+	}
+
 
 	/* simulate */
 
